@@ -43,6 +43,7 @@ public class ConnectFourPanel extends JPanel {
 				buttons[f][a] = new JButton();
 				buttons[f][a].setBackground(Color.BLACK);
 				buttons[f][a].setOpaque(true);
+				buttons[f][a].addActionListener(new ClickListener());
 				add(buttons[f][a]);
 			}
 
@@ -60,7 +61,17 @@ public class ConnectFourPanel extends JPanel {
 				add(squares[n][m]);
 			}
 		}
+		
+		
 
+	}
+	private class ClickListener implements ActionListener {
+		public void actionPerformed(ActionEvent e){
+			if (e.getSource() == buttons[0][0]){
+				squares[5][0].setBackground(Color.YELLOW);
+			}
+		}
+		
 	}
 
 }
